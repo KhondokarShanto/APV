@@ -5,7 +5,7 @@
 
 //frontpages
 
-    Route::get('/main', 'Frontend\FrontendController@showHome')->name('main');
+    Route::get('/home', 'Frontend\FrontendController@showHome')->name('main');
 
     Route::get('/login', 'Frontend\FrontendController@showLogin')->name('login');
 

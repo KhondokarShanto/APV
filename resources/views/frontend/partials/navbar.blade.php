@@ -47,7 +47,7 @@
                     </li>
                   </ul>
                 </div>
-              </div><a class="ps-logo" href="index.html"><img src="img/logo_light.png" alt=""></a>
+              </div><a class="ps-logo" href="{{ url('/home') }}"><img src="img/logo_light.png" alt=""></a>
             </div>
             <div class="header__center">
               <form class="ps-form--quick-search" action="{{ url('main')}}" method="get">
@@ -227,6 +227,14 @@
                   </div>
                 </li>
               </ul>
+
+
+
+
+
+
+
+
               <ul class="navigation__extra">
                 <li><a href="#">Sell on Martfury</a></li>
                 <li><a href="#">Tract your order</a></li>
@@ -280,7 +288,7 @@
           </div>
         </div>
         <div class="navigation--mobile">
-          <div class="navigation__left"><a class="ps-logo" href="index.html"><img src="img/logo_light.png" alt=""></a></div>
+          <div class="navigation__left"><a class="ps-logo" href="{{ url('/home') }}"><img src="img/logo_light.png" alt=""></a></div>
           <div class="navigation__right">
             <div class="header__actions">
               <div class="ps-cart--mini"><a class="header__extra" href="#"><i class="icon-bag2"></i><span><i>0</i></span></a>
