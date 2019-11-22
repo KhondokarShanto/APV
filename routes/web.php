@@ -80,6 +80,8 @@
 
 
     //backend...............................
+            // $table->foreign('role_id')->references('id')->on('roles')->onCascade('delete');
+    // $table->foreign('user_id')->references('id')->on('users')->onCascade('delete');
     //show dashboard............................
     Route::get('/panel', 'Backend\DashboardController@showDashboard')->name('panel');
 

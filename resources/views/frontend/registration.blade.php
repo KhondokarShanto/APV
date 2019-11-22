@@ -95,7 +95,7 @@
                       @endif
                   </div>
                 </div>
-
+                
                 <div class="form-group row">
                   <div class="col-md-6">
                       <input id="guardian_name" type="text" class="form-control{{ $errors->has('guardian_name') ? ' is-invalid' : '' }}" name="guardian_name" value="{{ old('guardian_name') }}"  placeholder="Guardian Name" autofocus>

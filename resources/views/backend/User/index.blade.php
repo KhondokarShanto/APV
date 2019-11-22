@@ -13,7 +13,7 @@
     Create User
   </button>
 
-  </br></br> 
+  </br></br>
 
   <table class="table table-bordered" id="datatable">
   <thead>
@@ -79,7 +79,7 @@
 
         <div class="modal-body">
           <form action="{{ route('registration')}}" method="post" role="form" >
-            @csrf 
+            @csrf
               <div class="form-group">
                 <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}"  placeholder="First Name" autofocus>
 

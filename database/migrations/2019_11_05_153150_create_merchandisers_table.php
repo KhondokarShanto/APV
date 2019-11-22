@@ -16,6 +16,9 @@ class CreateMerchandisersTable extends Migration
         Schema::create('merchandisers', function (Blueprint $table) {
           $table->bigIncrements('id');
           $table->bigInteger('user_id');
+          $table->string('first_name');
+          $table->string('last_name');
+          $table->string('user_name');
           $table->string('image');
           $table->string('phone');
           $table->string('email');

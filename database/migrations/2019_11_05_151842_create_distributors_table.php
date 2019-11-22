@@ -16,6 +16,9 @@ class CreateDistributorsTable extends Migration
         Schema::create('distributors', function (Blueprint $table) {
           $table->bigIncrements('id');
           $table->bigInteger('user_id');
+          $table->string('first_name');
+          $table->string('last_name');
+          $table->string('user_name');
           $table->string('image');
           $table->string('phone');
           $table->string('email');
@@ -23,6 +26,8 @@ class CreateDistributorsTable extends Migration
           $table->timestamp('birth_date');
           $table->string('age');
           $table->string('address');
+          $table->string('sex');
+          $table->string('blood_group');
           $table->string('guardian_name');
           $table->string('guardian_phone');
           $table->string('guardian_address');
