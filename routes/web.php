@@ -16,7 +16,7 @@
     Route::post('/registration', 'Frontend\AuthController@processRegistration')->name('registration');
 
     Route::get('/logout', 'frontend\AuthController@logout')->name('logout');
-    
+
 
 
 
@@ -128,7 +128,7 @@
 
 //order.................................................
 
-Route::get('/admin/order', 'Order\OrderController@showOrder')->name('dashorder');
+Route::get('/show/order', 'Order\OrderController@showOrder')->name('dashorder');
 
 Route::get('/create/order', 'Order\OrderController@createOrder')->name('createOrder');
 
@@ -143,7 +143,7 @@ Route::GET('order/delete/{id}','Order\OrderController@delete')->name('orderdelet
 
 //task.................................................................
 
-Route::get('/admin/task', 'Task\TaskController@showTask')->name('dashtask');
+Route::get('/show/task', 'Task\TaskController@showTask')->name('dashtask');
 
 Route::get('/create/task', 'Task\TaskController@createTask')->name('createTask');
 
@@ -153,7 +153,7 @@ Route::post('/store/task', 'Task\TaskController@create')->name('storeTask');
 
 //area...................................
 
-Route::get('/admin/area', 'Area\AreaController@showArea')->name('dasharea');
+Route::get('/show/area', 'Area\AreaController@showArea')->name('dasharea');
 
 Route::get('/create/area', 'Area\AreaController@createArea')->name('createArea');
 
@@ -170,7 +170,7 @@ Route::GET('area/delete/{id}','Area\AreaController@delete')->name('areadelete');
 
 //distributor.......................................
 
-Route::get('/admin/distributor', 'Distributor\DistributorController@showDistributor')->name('distributor');
+Route::get('/show/distributor', 'Distributor\DistributorController@showDistributor')->name('distributor');
 
 Route::get('/create/distributor', 'Distributor\DistributorController@createDistributor')->name('createDistributor');
 
@@ -184,7 +184,7 @@ Route::post('/store/distributor', 'Distributor\DistributorController@create')->n
 
 
 //merchandiser ...............................................................
-Route::get('/admin/merchandiser', 'Merchandiser\MerchandiserController@showMerchandiser')->name('merchandiser');
+Route::get('/show/merchandiser', 'Merchandiser\MerchandiserController@showMerchandiser')->name('merchandiser');
 
 Route::get('/create/merchandiser', 'Merchandiser\MerchandiserController@createMerchandiser')->name('createMerchandiser');
 

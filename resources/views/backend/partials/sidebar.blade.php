@@ -21,25 +21,25 @@
                     <a href="{{ url('/show/product') }}"><i class="fa fa-table fa-fw"></i> Products </a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/task') }}"><i class="fa fa-table fa-fw"></i> Task </a>
+                    <a href="{{ url('/show/task') }}"><i class="fa fa-table fa-fw"></i> Task </a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/distributor') }}"><i class="fa fa-table fa-fw"></i> Distributor</a>
+                    <a href="{{ url('/show/distributor') }}"><i class="fa fa-table fa-fw"></i> Distributor</a>
                 </li>
                 <li>
                     <a href="{{ url('/show/supplier') }}"><i class="fa fa-table fa-fw"></i> Supplier</a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/merchandiser') }}"><i class="fa fa-table fa-fw"></i> Merchandiser</a>
+                    <a href="{{ url('/show/merchandiser') }}"><i class="fa fa-table fa-fw"></i> Merchandiser</a>
                 </li>
                 <li>
                     <a href="{{ url('/show/requisition/') }}"><i class="fa fa-table fa-fw"></i> Requisition</a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/area') }}"><i class="fa fa-table fa-fw"></i> Area</a>
+                    <a href="{{ url('/show/area') }}"><i class="fa fa-table fa-fw"></i> Area</a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
+                    <a href="{{ url('/show/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('role_index') }}"><i class="fas fa-fw fa-folder"></i><span>Roles</span></a>
@@ -59,17 +59,17 @@
                     <a href="{{ url('/show/product') }}"><i class="fa fa-table fa-fw"></i> Products </a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/task') }}"><i class="fa fa-table fa-fw"></i> Task </a>
+                    <a href="{{ url('/show/task') }}"><i class="fa fa-table fa-fw"></i> Task </a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
+                    <a href="{{ url('/show/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
                 </li>
             @elseif(auth()->user->type=='marchandiser')
                 <li>
                     <a href="{{ url('/show/product') }}"><i class="fa fa-table fa-fw"></i> Products </a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
+                    <a href="{{ url('/show/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
                 </li>
             @endif
 

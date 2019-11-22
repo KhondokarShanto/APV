@@ -69,15 +69,18 @@ class AuthController extends Controller
         ]);
       }
 
-      if(auth()->user()->type=='admin'){
+      session()->flash('message','Registration successfull');
+      return redirect('/login');
 
-        return redirect()->back();
-
-      }else{
-
-        session()->flash('message','Registration successfull');
-        return redirect('/login');
-      }
+      // if(auth()->user()->type=='admin'){
+      //
+      //   return redirect()->back();
+      //
+      // }else{
+      //
+      //   session()->flash('message','Registration successfull');
+      //   return redirect('/login');
+      // }
     }
 
 
@@ -95,10 +98,10 @@ class AuthController extends Controller
           ]);
 
           if ($validator->fails()) {
-              
+
               return redirect()->back()->withErrors($validator)->withInput();
           }
-        
+
           $credentials = $request->except('_token');
 
           if (auth()->attempt($credentials)) {
@@ -110,7 +113,7 @@ class AuthController extends Controller
           {
             session()->flash('message', 'invalid User');
             return redirect()->back();
-          }   
+          }
         }
 
 /*
@@ -118,7 +121,7 @@ class AuthController extends Controller
 | Logout
 |--------------------------------------------------------------------------
 */
- 
+
   	public function logout(){
         auth()->logout();
         session()->flush();
