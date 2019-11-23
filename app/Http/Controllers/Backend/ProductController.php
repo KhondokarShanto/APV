@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -18,13 +17,13 @@ class ProductController extends Controller
 
     $products = Product::where('status','active')->get();
     $suppliers= User::where('type','supplier')->get();
-    return view('backend.product',compact('products','suppliers'));
+    return view('backend.Product.product',compact('products','suppliers'));
   }
 
   public function details($id){
 
     $product= Product::with('supplier')->find($id);
-    return view('backend.detailsProduct', compact('product'));
+    return view('backend.Product.detailsProduct', compact('product'));
   }
 
 
@@ -49,7 +48,7 @@ class ProductController extends Controller
   public function edit($id){
 
     $edit= Product::find($id);
-    return view('backend.updateProduct',compact('edit'));
+    return view('backend.Product.updateProduct',compact('edit'));
 
   }
 

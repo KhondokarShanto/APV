@@ -49,7 +49,7 @@ class MerchandiserController extends Controller
   public function edit($id){
 
     $edit= Merchandiser::find($id);
-    return view('backend.updateMerchandiser',compact('edit'));
+    return view('backend.Merchandiser.updateMerchandiser',compact('edit'));
 
   }
 

@@ -49,7 +49,7 @@ class OrderController extends Controller
   public function edit($id){
 
     $edit= Order::find($id);
-    return view('backend.updateOrder',compact('edit'));
+    return view('backend.Order.updateOrder',compact('edit'));
 
   }
 

@@ -19,7 +19,6 @@
     </div>
     <div>
       <a><button type="submit" class="btn btn-primary">Submit</button></a>
-      <a href="{{route('edit.area')}}"class="btn btn-success">
         Update
       </a>
     </div>

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Supplier;
@@ -15,12 +14,12 @@ class SupplierController extends Controller
 
     $suppliers = User::where('type','supplier')->get();
     $roles = Role::all();
-    return view('backend.supplier',compact('suppliers','roles'));
+    return view('backend.Supplier.supplier',compact('suppliers','roles'));
   }
 
   public function details(){
 
-    return view('backend.createSupplier');
+    return view('backend.Supplier.createSupplier');
   }
 
 
@@ -35,7 +34,7 @@ class SupplierController extends Controller
   public function edit($id){
 
     $edit= Supplier::find($id);
-    return view('backend.updateSupplier ',compact('edit'));
+    return view('backend.Supplier.updateSupplier ',compact('edit'));
 
   }
 

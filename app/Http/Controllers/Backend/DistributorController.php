@@ -48,7 +48,7 @@ class DistributorController extends Controller
   public function edit($id){
 
     $edit= Distributor::find($id);
-    return view('backend.updateDistributor',compact('edit'));
+    return view('backend.Distributor.updateDistributor',compact('edit'));
 
   }
 

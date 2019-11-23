@@ -12,7 +12,7 @@ class AreaController extends Controller
 {
     public function index(){
       $areas = Area::all();
-      return view('backend.area',compact('areas'));
+      return view('backend.Area.area',compact('areas'));
   }
 
   // public function index(){
@@ -37,7 +37,7 @@ class AreaController extends Controller
 
     Area::create([
       'name'        =>$request->name,
-      'postcode'       =>$request->postcode,
+      'postcode'    =>$request->postcode,
       'discription' =>$request->discription,
 
     ]);
@@ -48,7 +48,7 @@ class AreaController extends Controller
   public function edit($id){
 
     $edit= Area::find($id);
-    return view('backend.updateArea',compact('edit'));
+    return view('backend.Area.updateArea',compact('edit'));
 
   }
 
