@@ -1,59 +1,79 @@
 <?php
 
-namespace App\Http\Controllers\Order;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\User;
 
 class OrderController extends Controller
 {
-  function index()
-  {
-    return view ('frontpage.orderpage.index');
+  /*public function index(){
+
+    return view ('frontpage.productpage.index');
+  }*/
+
+  // public function index(){
+  //
+  //   $products = Product::where('status','active')->get();
+  //   $suppliers= User::where('type','supplier')->get();
+  //   return view('backend.product',compact('products','suppliers'));
+  // }
+  //
+  // public function details($id){
+  //
+  //   $product= Product::with('supplier')->find($id);
+  //   return view('backend.detailsProduct', compact('product'));
+  // }
+
+
+  public function create(){
+
   }
-  function showOrder()
-  {
-    $orders = Order::all();
-    return view('backend.order',compact('orders'));
-  }
-  function createOrder()
-  {
-    return view('backend.createOrder');
-  }
-  function create(Request $request)
-  {
-    Order::insert([
-        'name'=>$request->name,
-        'email'=>$request->email,
-        'phone'=>$request->phone,
-        'order'=>$request->order,
+
+  public function store(Request $request){
+
+    Order::create([
+      'name'        =>$request->name,
+      'price'       =>$request->price,
+      'description' =>$request->description,
+      'quantity'    =>$request->quantity,
+      'brand'       =>$request->brand,
+      'status'      =>$request->status,
     ]);
+
     return back();
   }
-  function edit($id)
-  {
+
+  public function edit($id){
+
     $edit= Order::find($id);
-            return view('backend.updateOrder',compact('edit'));
+    return view('backend.updateOrder',compact('edit'));
 
   }
 
-  function update(Request $request,$id)
-  {
-    $data=Order::findorFail($id);
+  public function update(Request $request,$id){
+
+    $data = Order::findorFail($id);
+
     $data->update([
-      'name'=>$request->name,
-      'email'=>$request->email,
-      'phone'=>$request->phone,
-      'order'=>$request->order,
+      'name'        =>$request->name,
+      'price'       =>$request->price,
+      'description' =>$request->description,
+      'quantity'    =>$request->quantity,
+      'brand'       =>$request->brand,
+      'status'      =>$request->status,
     ]);
 
-    return redirect()->route('dashorder');
+    return redirect()->back();
   }
-  function delete($id)
-  {
+
+  public function delete($id){
+
     $data=Order::find($id);
-        $data->delete();
+    $data->delete();
+
     return back();
   }
 }

@@ -6,41 +6,24 @@
 //frontpages
 
     Route::get('/home', 'Frontend\FrontendController@showHome')->name('main');
-
     Route::get('/login', 'Frontend\FrontendController@showLogin')->name('login');
-
     Route::get('/registration', 'Frontend\FrontendController@showRegistration')->name('registration');
-
     Route::post('/login', 'Frontend\AuthController@processLogin')->name('login');
-
     Route::post('/registration', 'Frontend\AuthController@processRegistration')->name('registration');
-
     Route::get('/logout', 'frontend\AuthController@logout')->name('logout');
-
-
-
-
 
     //aboutuspage..........................................
 
-    Route::get('/about', 'AboutUsController@index')->name('about');
 
     //contactuspage.............................................
-    Route::get('/contact', 'ContactUsController@index')->name('contact');
-
-    Route::post('/contact/create', 'ContactUsController@create')->name('contact_create');
 
 
 
 
-   /* //productpage....................................................
+
+   //productpage....................................................
     Route::get('/product', 'Product\ProductController@index')->name('product');
-
-    Route::post('/product/create', 'ProductController@create')->name('product_create');*/
-
-
-
-
+    Route::post('/product/create', 'ProductController@create')->name('product_create');
 
     //orderpage.......................................................
 
@@ -71,126 +54,96 @@
     Route::get('/task', 'Task\TaskController@index')->name('task');
     Route::post('/task/create', 'TaskController@create')->name('task_create');
 
-
-
     //dashboard layout
 
 
 
 
 
-    //backend...............................
-  
-    //show dashboard............................
+    //backend.....................................................................................
+
+    //show dashboard..............................................................................
     Route::get('/panel', 'Backend\DashboardController@showDashboard')->name('panel');
 
-    //contact...................................
-    Route::get('/admin/contact', 'Dashboard\DashboardContactController@index')->name('dashcontact');
+    //contact..............................................................................
 
 
 
-    //supplier...............................................
+    //supplier...............................................................................
 
     Route::get('/show/supplier',    'Backend\SupplierController@index')->name('show.supplier');
-
     Route::get('/details/supplier/{id}', 'Backend\SupplierController@details')->name('details.supplier');
-
     Route::get('/create/supplier',  'Backend\SupplierController@create')->name('create.supplier');
-
     Route::post('/store/supplier',  'Backend\SupplierController@store')->name('store.supplier');
-
     Route::get('/edit/supplier',    'Backend\SupplierController@edit')->name('edit.supplier');
-
     Route::get('/update/supplier',  'Backend\SupplierController@update')->name('update.supplier');
-
     Route::get('/delete/supplier/{id}', 'Backend\SupplierController@delete')->name('delete.supplier');
 
 
 
     //product...........................................
 
-    Route::get('show/product/', 'Backend\ProductController@index')->name('show.product');
-
+    Route::get('/show/product/', 'Backend\ProductController@index')->name('show.product');
     Route::get('/details/product/{id}', 'Backend\ProductController@details')->name('details.product');
-
-
     Route::get('/create/product', 'Backend\ProductController@create')->name('create.product');
-
     Route::post('/store/product', 'Backend\ProductController@store')->name('store.product');
-
     Route::get('/edit/product/{id}','Backend\ProductController@edit')->name('edit.product');
-
     Route::post('/update/product/{id}', 'Backend\ProductController@update')->name('update.product');
-
     Route::get('/delete/product/{id}','Backend\ProductController@delete')->name('delete.product');
 
 
+//order............................................................................
+
+Route::get('/show/order', 'Backend\OrderController@index')->name('show.order');
+Route::get('/details/order/{id}', 'Backend\OrderController@details')->name('details.order');
+Route::get('/create/order', 'Backend\OrderController@create')->name('create.order');
+Route::post('/store/order', 'Backend\OrderController@store')->name('store.order');
+Route::GET('/edit/order/{id}','Backend\OrderController@edit')->name('edit.order');
+Route::post('/update/order/{id}', 'Backend\OrderController@update')->name('update.order');
+Route::GET('/delete/order/{id}','Backend\OrderController@delete')->name('delete.order');
 
 
-//order.................................................
+//task............................................................................
 
-Route::get('/show/order', 'Order\OrderController@showOrder')->name('dashorder');
-
-Route::get('/create/order', 'Order\OrderController@createOrder')->name('createOrder');
-
-Route::post('/store/order', 'Order\OrderController@create')->name('storeOrder');
-
-Route::GET('order/{id}/','Order\OrderController@edit')->name('orderEdit');
-
-Route::Any('order/update/{id}', 'Order\OrderController@update')->name('orderUpdate');
-
-Route::GET('order/delete/{id}','Order\OrderController@delete')->name('orderdelete');
+Route::get('/show/task', 'Backend\TaskController@index')->name('show.task');
+Route::get('/details/task/{id}', 'Backend\TaskController@details')->name('details.task');
+Route::get('/create/task', 'Backend\TaskController@create')->name('create.task');
+Route::post('/store/task', 'Backend\TaskController@store')->name('store.task');
+Route::GET('/edit/task/{id}','Backend\TaskController@edit')->name('edit.task');
+Route::post('/update/task/{id}', 'Backend\TaskController@update')->name('update.task');
+Route::GET('/delete/task/{id}','Backend\TaskController@delete')->name('delete.task');
 
 
-//task.................................................................
+//area.................................................................................
 
-Route::get('/show/task', 'Task\TaskController@showTask')->name('dashtask');
-
-Route::get('/create/task', 'Task\TaskController@createTask')->name('createTask');
-
-Route::post('/store/task', 'Task\TaskController@create')->name('storeTask');
-
-
-
-//area...................................
-
-Route::get('/show/area', 'Area\AreaController@showArea')->name('dasharea');
-
-Route::get('/create/area', 'Area\AreaController@createArea')->name('createArea');
-
-Route::post('/store/area', 'Area\AreaController@create')->name('storeArea');
-
-Route::GET('area/{id}/','Area\AreaController@edit')->name('areaEdit');
-
-Route::Any('area/update/{id}', 'Area\AreaController@update')->name('areaUpdate');
-
-Route::GET('area/delete/{id}','Area\AreaController@delete')->name('areadelete');
+Route::get('/show/area', 'Backend\AreaController@index')->name('show.area');
+Route::get('/details/task/{id}', 'Backend\AreaController@details')->name('details.area');
+Route::get('/create/area', 'Backend\AreaController@create')->name('create.area');
+Route::post('/store/area', 'Backend\AreaController@store')->name('store.area');
+Route::GET('/edit/area/{id}','Backend\AreaController@edit')->name('edit.area');
+Route::post('/update/area/{id}', 'Backend\AreaController@update')->name('update.area');
+Route::GET('/delete/area/{id}','Backend\AreaController@delete')->name('delete.area');
 
 
+//distributor...................................................................................
 
-
-//distributor.......................................
-
-Route::get('/show/distributor', 'Distributor\DistributorController@showDistributor')->name('distributor');
-
-Route::get('/create/distributor', 'Distributor\DistributorController@createDistributor')->name('createDistributor');
-
-Route::post('/store/distributor', 'Distributor\DistributorController@create')->name('storeDistributor');
-
-
-
-
-
-
+Route::get('/show/distributor', 'Backend\DistributorController@index')->name('show.distributor');
+Route::get('/details/distributor/{id}', 'Backend\DistributorController@details')->name('details.distributor');
+Route::get('/create/distributor', 'Backend\DistributorController@create')->name('create.distributor');
+Route::post('/store/distributor', 'Backend\DistributorController@store')->name('store.distributor');
+Route::GET('/edit/distributor/{id}','Backend\DistributorController@edit')->name('edit.distributor');
+Route::post('/update/distributor/{id}', 'Backend\DistributorController@update')->name('update.distributor');
+Route::GET('/delete/distributor/{id}','Backend\DistributorController@delete')->name('delete.distributor');
 
 
 //merchandiser ...............................................................
-Route::get('/show/merchandiser', 'Merchandiser\MerchandiserController@showMerchandiser')->name('merchandiser');
-
-Route::get('/create/merchandiser', 'Merchandiser\MerchandiserController@createMerchandiser')->name('createMerchandiser');
-
-Route::post('/store/merchandiser', 'Merchandiser\MerchandiserController@create')->name('storeMerchandiser');
-
+Route::get('/show/merchandiser', 'Backend\MerchandiserController@index')->name('show.merchandiser');
+Route::get('/details/merchandiser/{id}', 'Backend\MerchandiserController@details')->name('details.merchandiser');
+Route::get('/create/merchandiser', 'Backend\MerchandiserController@create')->name('create.merchandiser');
+Route::post('/store/merchandiser', 'Backend\MerchandiserController@store')->name('store.merchandiser');
+Route::GET('/edit/merchandiser/{id}','Backend\MerchandiserController@edit')->name('edit.merchandiser');
+Route::post('/update/merchandiser/{id}', 'Backend\MerchandiserController@update')->name('update.merchandiser');
+Route::GET('/delete/merchandiser/{id}','Backend\MerchandiserController@delete')->name('delete.merchandiser');
 
 
 
@@ -202,34 +155,26 @@ Route::post('/store/merchandiser', 'Merchandiser\MerchandiserController@create')
 
 
 
-//Roles
+//Roles..............................................................................................
 
 Route::get('/user/roles/index', 'Backend\RoleController@index')->name('role_index');
-
 Route::get('/user/roles/create', 'Backend\RoleController@RoleCreate')->name('role_create_page');
-
 Route::post('/user/roles/create', 'Backend\RoleController@create')->name('role_create');
-
 Route::get('/user/roles/{id}/update', 'Backend\RoleController@RoleUpdate')->name('role_update_page');
-
 Route::PATCH('/user/roles/update/{id}', 'Backend\RoleController@update')->name('role_update');
-
 Route::get('/user/roles/delete/{id}', 'Backend\RoleController@delete')->name('role_delete');
 
-//roles end
+//roles end........................................................................................
 
 
 
 
-//Users
+//Users.......................................................................................
 
     Route::get('show/user/', 'Backend\UserController@index')->name('show.user');
-
     Route::get('/details/user/{id}', 'Backend\UserController@details')->name('details.user');
-
     Route::post('/store/user', 'Backend\UserController@store')->name('store.user');
-
     Route::post('/update/user/{id}', 'Backend\UserController@update')->name('update.user');
-
     Route::get('/delete/user/{id}','Backend\UserController@delete')->name('delete.user');
-//users end
+
+//users end......................................................................................
