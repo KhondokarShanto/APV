@@ -2,10 +2,7 @@
 
 @section('content')
 <div class="card">
-  <div class="card-header">
-    {{_('Recomend the areas we can cover')}}
-  </div>
-  <form id="area" action="{{ route('areaUpdate', $edit->id) }}" method="POST">
+  <form id="area" action="{{route('update.area',[$edit->id])}}" method="POST">
     @csrf
     @method('PATCH')
     <div>
@@ -13,11 +10,18 @@
       <input type="text" name="name" value="{{$edit->name}}" placeholder="Enter Name" required>
     </div>
     <div>
-      <label for="name"><b>Area Code</b></label>
-      <input type="text" name="code" value="{{$edit->code}}" placeholder="Area Code" required>
+      <label for="postcode"><b>Area Code</b></label>
+      <input type="text" name="postcode" value="{{$edit->postcode}}" placeholder="Area Code" required>
+    </div>
+    <div>
+      <label for="discription"><b>Area discription</b></label>
+      <input type="text" name="discription" value="{{$edit->discription}}" placeholder="Area discription" required>
     </div>
     <div>
       <a><button type="submit" class="btn btn-primary">Submit</button></a>
+      <a href="{{route('edit.area')}}"class="btn btn-success">
+        Update
+      </a>
     </div>
   </form>
 </div>

@@ -38,7 +38,7 @@ class AreaController extends Controller
     Area::create([
       'name'        =>$request->name,
       'postcode'       =>$request->postcode,
-      'description' =>$request->description,
+      'discription' =>$request->discription,
 
     ]);
 
