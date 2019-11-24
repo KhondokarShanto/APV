@@ -121,7 +121,7 @@ Route::get('/details/task/{id}', 'Backend\AreaController@details')->name('detail
 Route::get('/create/area', 'Backend\AreaController@create')->name('create.area');
 Route::post('/store/area', 'Backend\AreaController@store')->name('store.area');
 Route::GET('/edit/area/{id}','Backend\AreaController@edit')->name('edit.area');
-Route::post('/update/area/{id}', 'Backend\AreaController@update')->name('update.area');
+Route::PATCH('/update/area/{id}', 'Backend\AreaController@update')->name('update.area');
 Route::GET('/delete/area/{id}','Backend\AreaController@delete')->name('delete.area');
 
 

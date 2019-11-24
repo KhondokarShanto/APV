@@ -71,7 +71,7 @@
 	              <tr>
 	              	<th scope="col-md-4">Status</th>
 	                <th scope="col-md-4">Guardian Name</th>
-	                <th scope="col-md-4">Guardian Contact</th> 
+	                <th scope="col-md-4">Guardian Contact</th>
 	              </tr>
 	            </thead>
 	            <tbody style="color: #3390ff; text-decoration: bold;">
@@ -110,68 +110,68 @@
 
         	<div class="modal-body">
           		<form action="{{ route('update.user',[$user->id])}}" method="post" role="form" >
-            	@csrf 
-		            <div class="form-group">    
+            	@csrf
+		            <div class="form-group">
 		            	<label for="name">First Name:</label>
 		                <input class="form-control" id="first_name" type="text" name="first_name" placeholder="First Name" value="{{$user->first_name}}"/>
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Last Name:</label>
 		                <input class="form-control" id="last_name" type="text" name="last_name" placeholder="Last Name" value="{{$user->last_name}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">User Name:</label>
 		                <input class="form-control" id="user_name" type="text" name="user_name" placeholder="User Name" value="{{$user->user_name}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Phone Number:</label>
 		                <input class="form-control" id="phone_no" type="text" name="phone_no" placeholder="Phone Number" value="{{$user->phone_no}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Email:</label>
 		                <input class="form-control" id="email" type="text" name="email" placeholder="Email" value="{{$user->email}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		            	<label for="name">User Type:</label>
 		                <select class="form-control" id="type" name="type" >
-	                      <option value="">{{$user->type}}</option>
+	                      <option value="{{$user->type}}">{{$user->type}}</option>
 	                      @foreach( $roles as $role)
 	                      <option value="{{ $role->name}}">{{ $role->name}}</option>
 	                      @endforeach
 	                    </select>
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">NID:</label>
 		                <input class="form-control" id="nid" type="text" name="nid" placeholder="NID" value="{{$user->nid}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Date of Birth:</label>
 		                <input class="form-control" id="birth_date" type="text" name="birth_date" placeholder="Date of Birth" value="{{$user->birth_date}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Address:</label>
 		                <input class="form-control" id="address" type="text" name="address" placeholder="Address" value="{{$user->address}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Guardian Name:</label>
 		                <input class="form-control" id="guardian_name" type="text" name="guardian_name" placeholder="Guardian Name" value="{{$user->guardian_name}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Guardian Phone:</label>
 		                <input class="form-control" id="guardian_phone" type="text" name="guardian_phone" placeholder="Guardian Phone" value="{{$user->guardian_phone}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Status:</label>
 		                <select class="form-control" id="status" name="status" >
 	                    	<option value="{{$user->status}}">

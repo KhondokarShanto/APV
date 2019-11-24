@@ -40,6 +40,7 @@ class ProductController extends Controller
       'quantity'    =>$request->quantity,
       'brand'       =>$request->brand,
       'status'      =>$request->status,
+      'supplier_id'      =>$request->supplier,
     ]);
 
     return back();

@@ -13,8 +13,8 @@
       Create Products
     </button>
   @endif
-  
-  </br></br> 
+
+  </br></br>
 
   <table class="table table-bordered" id="datatable">
     <thead>
@@ -61,28 +61,28 @@
 
         <div class="modal-body">
           <form action="{{ route('store.product')}}" method="post" role="form" >
-            @csrf 
-              <div class="form-group">    
+            @csrf
+              <div class="form-group">
                 <label for="name">Name:</label>
                 <input class="form-control" id="name" type="text" name="name" placeholder=" Name" />
               </div>
 
-              <div class="form-group">    
+              <div class="form-group">
                 <label for="name">Price:</label>
                 <input class="form-control" id="price" type="text" name="price" placeholder="Price" />
               </div>
 
-              <div class="form-group">    
+              <div class="form-group">
                 <label for="name">Description:</label>
                 <input class="form-control" id="description" type="text" name="description" placeholder="Description" />
               </div>
 
-              <div class="form-group">    
+              <div class="form-group">
                 <label for="name">Quantity:</label>
                 <input class="form-control" id="quantity" type="text" name="quantity" placeholder="Quantity" />
               </div>
 
-              <div class="form-group">    
+              <div class="form-group">
                 <label for="name">Brand:</label>
                 <input class="form-control" id="brand" type="text" name="brand" placeholder="Brand" />
               </div>
@@ -92,7 +92,7 @@
                 <select class="form-control" id="supplier" name="supplier" >
                   <option value="outCollection">Out Collection</option>
                   @foreach( $suppliers as $supplier)
-                  <option value="{{ $supplier->user_name}}">
+                  <option value="{{ $supplier->user_id}}">
                     {{ $supplier->user_name}}</option>
                   @endforeach
                 </select>

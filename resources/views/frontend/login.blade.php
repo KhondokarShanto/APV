@@ -4,7 +4,7 @@
   <div class="ps-page--my-account">
     <div class="ps-my-account">
       <div class="container">
-        
+
         @if ($errors->any())
         <div>
             <ul class="alert alert-danger">
@@ -34,7 +34,7 @@
 
                     @if ($errors->has('email'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('email') }}</strong>
+                        <strong>shanto</strong>
                     </span>
                     @endif
                   </div>

@@ -57,13 +57,13 @@ class AreaController extends Controller
     $data = Area::findorFail($id);
 
     $data->update([
-      'name'        =>$request->name,
+      'name'           =>$request->name,
       'postcode'       =>$request->postcode,
-      'discription' =>$request->discription,
+      'discription'    =>$request->discription,
 
     ]);
 
-    return redirect()->back();
+    return redirect()->route('show.area');
   }
 
   public function delete($id){
