@@ -33,6 +33,7 @@ class UserController extends Controller
       'first_name'  => 'required',
       'last_name'   => 'required',
       'user_name'   => 'required',
+      'address'     => 'required',
       'email'       => 'required|email|unique:users,email',
       'password'    => 'required|min:6|confirmed',
     ]);
